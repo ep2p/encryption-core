@@ -1,6 +1,5 @@
 package lab.idioglossia.eleuth.encore.key;
 
-import com.sun.istack.internal.Nullable;
 import lab.idioglossia.eleuth.encore.Generator;
 
 import java.io.File;
@@ -23,7 +22,7 @@ public class KeyStoreGenerator implements Generator<KeyStore> {
     private boolean fileExists = false;
 
     /* Accepts null keypair when keystore file already exists */
-    public KeyStoreGenerator(CNGenerator cnGenerator, String address, String password, @Nullable KeyPair keyPair) throws IOException {
+    public KeyStoreGenerator(CNGenerator cnGenerator, String address, String password, KeyPair keyPair) throws IOException {
         this.cnGenerator = cnGenerator;
         this.password = password;
         this.file = new File(address);

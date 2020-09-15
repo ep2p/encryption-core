@@ -1,8 +1,7 @@
 package lab.idioglossia.eleuth.encore.key;
 
-import com.sun.istack.internal.Nullable;
-import org.apache.commons.codec.binary.Base64;
 import lab.idioglossia.eleuth.encore.Generator;
+import org.apache.commons.codec.binary.Base64;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,7 +21,7 @@ public class PubHashUserIdGenerator implements Generator<String> {
     private String filePath;
 
     /* Accepts null publicKey when keystore file already exists */
-    public PubHashUserIdGenerator(String filePath, @Nullable PublicKey publicKey) {
+    public PubHashUserIdGenerator(String filePath, PublicKey publicKey) {
         this.publicKey = publicKey;
         this.filePath = filePath;
         init();
