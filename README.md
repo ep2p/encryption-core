@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/idioglossia/eleuth-java-security-core.svg)](https://jitpack.io/#idioglossia/eleuth-java-security-core)
+
 # Eleuth Security Core in Java
 
 This repository contains java classes, helpers and utils for Eleuth to be used in different implementations.
