@@ -1,7 +1,7 @@
-package project.neoroutes.aes;
+package lab.idioglossia.eleuth.encore.aes;
 
 import org.junit.jupiter.api.Test;
-import project.neoroutes.helper.AESSecretKeyGenerator;
+import lab.idioglossia.eleuth.encore.helper.AESSecretKeyGenerator;
 
 import java.io.*;
 

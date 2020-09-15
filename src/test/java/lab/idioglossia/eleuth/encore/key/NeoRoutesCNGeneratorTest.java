@@ -1,4 +1,4 @@
-package project.neoroutes.key;
+package lab.idioglossia.eleuth.encore.key;
 
 import org.junit.jupiter.api.Test;
 

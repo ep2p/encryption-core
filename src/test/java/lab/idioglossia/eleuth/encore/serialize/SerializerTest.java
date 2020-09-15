@@ -1,7 +1,7 @@
-package project.neoroutes.serialize;
+package lab.idioglossia.eleuth.encore.serialize;
 
 import org.junit.jupiter.api.Test;
-import project.neoroutes.helper.Serializer;
+import lab.idioglossia.eleuth.encore.helper.Serializer;
 
 import java.io.IOException;
 

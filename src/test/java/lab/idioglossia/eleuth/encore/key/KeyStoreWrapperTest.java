@@ -1,9 +1,9 @@
-package project.neoroutes.key;
+package lab.idioglossia.eleuth.encore.key;
 
 import org.apache.commons.codec.binary.Base64;
 import org.junit.jupiter.api.Test;
-import project.neoroutes.helper.CertificateHelper;
-import project.neoroutes.helper.KeyStoreWrapper;
+import lab.idioglossia.eleuth.encore.helper.CertificateHelper;
+import lab.idioglossia.eleuth.encore.helper.KeyStoreWrapper;
 
 import java.io.File;
 import java.io.IOException;

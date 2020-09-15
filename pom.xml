@@ -4,20 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>project.neoroutes</groupId>
-    <artifactId>java-core</artifactId>
-    <version>1.1.0-SNAPSHOT</version>
-    <name>neoroutes-java-core</name>
-    <description>Core java classes, utils and helpers for neoroutes encryption, key exchange and etc </description>
+    <groupId>lab.idioglossia.eleuth.encore</groupId>
+    <artifactId>java-security-core</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>Eleuth Core Java Security</name>
+    <description>Core java classes and utils for Eluth encryption, key exchange and etc </description>
     <developers>
         <developer>
             <roles>
-                <role>Project Manager - Java Developer</role>
+                <role>Owner Developer</role>
             </roles>
-            <name>mrsgoldenretriever</name>
-            <organization>Neo Routes</organization>
-            <organizationUrl>https://github.com/neoroutes/</organizationUrl>
-            <url>https://github.com/mrsgoldenretriever</url>
+            <name>Sepehr Gh</name>
+            <organization>idioglossia</organization>
+            <organizationUrl>https://github.com/idioglossia/</organizationUrl>
+            <url>https://github.com/sepehr-gh</url>
         </developer>
     </developers>
 

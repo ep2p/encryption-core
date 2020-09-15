@@ -1,7 +1,7 @@
-package project.neoroutes.userId;
+package lab.idioglossia.eleuth.encore.userId;
 
 import org.junit.jupiter.api.Test;
-import project.neoroutes.key.UUIDFileUserIdGenerator;
+import lab.idioglossia.eleuth.encore.key.UUIDFileUserIdGenerator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -1,8 +1,8 @@
-package project.neoroutes.userId;
+package lab.idioglossia.eleuth.encore.userId;
 
 import org.junit.jupiter.api.Test;
-import project.neoroutes.key.KeyGenerator;
-import project.neoroutes.key.PubHashUserIdGenerator;
+import lab.idioglossia.eleuth.encore.key.KeyGenerator;
+import lab.idioglossia.eleuth.encore.key.PubHashUserIdGenerator;
 
 import java.security.KeyPair;
 

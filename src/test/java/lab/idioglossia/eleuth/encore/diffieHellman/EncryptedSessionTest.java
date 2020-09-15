@@ -1,4 +1,4 @@
-package project.neoroutes.diffieHellman;
+package lab.idioglossia.eleuth.encore.diffieHellman;
 
 import org.junit.jupiter.api.Test;
 

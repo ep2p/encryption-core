@@ -1,9 +1,9 @@
-package project.neoroutes.serialize;
+package lab.idioglossia.eleuth.encore.serialize;
 
 import org.apache.commons.codec.binary.Base64;
 import org.junit.jupiter.api.Test;
-import project.neoroutes.diffieHellman.DiffieHellman;
-import project.neoroutes.helper.Serializer;
+import lab.idioglossia.eleuth.encore.diffieHellman.DiffieHellman;
+import lab.idioglossia.eleuth.encore.helper.Serializer;
 
 import java.io.IOException;
 

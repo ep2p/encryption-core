@@ -1,16 +1,16 @@
-package project.neoroutes.signature;
+package lab.idioglossia.eleuth.encore.signature;
 
 import org.junit.jupiter.api.Test;
-import project.neoroutes.diffieHellman.DiffieHellman;
-import project.neoroutes.diffieHellman.EncryptedSession;
-import project.neoroutes.helper.KeyStoreWrapper;
-import project.neoroutes.helper.MessageSigner;
-import project.neoroutes.helper.PrivateKeyProvider;
-import project.neoroutes.helper.SignatureVerifier;
-import project.neoroutes.key.CNGenerator;
-import project.neoroutes.key.KeyGenerator;
-import project.neoroutes.key.KeyStoreGenerator;
-import project.neoroutes.key.NeoRoutesCNGenerator;
+import lab.idioglossia.eleuth.encore.diffieHellman.DiffieHellman;
+import lab.idioglossia.eleuth.encore.diffieHellman.EncryptedSession;
+import lab.idioglossia.eleuth.encore.helper.KeyStoreWrapper;
+import lab.idioglossia.eleuth.encore.helper.MessageSigner;
+import lab.idioglossia.eleuth.encore.helper.PrivateKeyProvider;
+import lab.idioglossia.eleuth.encore.helper.SignatureVerifier;
+import lab.idioglossia.eleuth.encore.key.CNGenerator;
+import lab.idioglossia.eleuth.encore.key.KeyGenerator;
+import lab.idioglossia.eleuth.encore.key.KeyStoreGenerator;
+import lab.idioglossia.eleuth.encore.key.NeoRoutesCNGenerator;
 
 import java.io.File;
 import java.io.IOException;

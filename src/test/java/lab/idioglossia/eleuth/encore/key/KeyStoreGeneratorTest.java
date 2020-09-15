@@ -1,4 +1,4 @@
-package project.neoroutes.key;
+package lab.idioglossia.eleuth.encore.key;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static project.neoroutes.helper.CertificateHelper.getValByAttributeTypeFromIssuerDN;
+import static lab.idioglossia.eleuth.encore.helper.CertificateHelper.getValByAttributeTypeFromIssuerDN;
 
 public class KeyStoreGeneratorTest {
     private final KeyStoreGenerator keyStoreGenerator;
