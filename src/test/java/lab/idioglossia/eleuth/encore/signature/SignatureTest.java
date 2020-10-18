@@ -1,16 +1,16 @@
-package lab.idioglossia.eleuth.encore.signature;
+package com.github.ep2p.encore.signature;
 
 import org.junit.jupiter.api.Test;
-import lab.idioglossia.eleuth.encore.diffieHellman.DiffieHellman;
-import lab.idioglossia.eleuth.encore.diffieHellman.EncryptedSession;
-import lab.idioglossia.eleuth.encore.helper.KeyStoreWrapper;
-import lab.idioglossia.eleuth.encore.helper.MessageSigner;
-import lab.idioglossia.eleuth.encore.helper.PrivateKeyProvider;
-import lab.idioglossia.eleuth.encore.helper.SignatureVerifier;
-import lab.idioglossia.eleuth.encore.key.CNGenerator;
-import lab.idioglossia.eleuth.encore.key.KeyGenerator;
-import lab.idioglossia.eleuth.encore.key.KeyStoreGenerator;
-import lab.idioglossia.eleuth.encore.key.NeoRoutesCNGenerator;
+import com.github.ep2p.encore.diffieHellman.DiffieHellman;
+import com.github.ep2p.encore.diffieHellman.EncryptedSession;
+import com.github.ep2p.encore.helper.KeyStoreWrapper;
+import com.github.ep2p.encore.helper.MessageSigner;
+import com.github.ep2p.encore.helper.PrivateKeyProvider;
+import com.github.ep2p.encore.helper.SignatureVerifier;
+import com.github.ep2p.encore.key.CNGenerator;
+import com.github.ep2p.encore.key.KeyGenerator;
+import com.github.ep2p.encore.key.KeyStoreGenerator;
+import com.github.ep2p.encore.key.NeoRoutesCNGenerator;
 
 import java.io.File;
 import java.io.IOException;

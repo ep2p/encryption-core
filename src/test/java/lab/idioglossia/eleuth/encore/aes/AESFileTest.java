@@ -1,7 +1,7 @@
-package lab.idioglossia.eleuth.encore.aes;
+package com.github.ep2p.encore.aes;
 
 import org.junit.jupiter.api.Test;
-import lab.idioglossia.eleuth.encore.helper.AESSecretKeyGenerator;
+import com.github.ep2p.encore.helper.AESSecretKeyGenerator;
 
 import java.io.*;
 

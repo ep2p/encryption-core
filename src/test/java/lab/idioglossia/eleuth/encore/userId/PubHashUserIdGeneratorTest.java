@@ -1,8 +1,8 @@
-package lab.idioglossia.eleuth.encore.userId;
+package com.github.ep2p.encore.userId;
 
 import org.junit.jupiter.api.Test;
-import lab.idioglossia.eleuth.encore.key.KeyGenerator;
-import lab.idioglossia.eleuth.encore.key.PubHashUserIdGenerator;
+import com.github.ep2p.encore.key.KeyGenerator;
+import com.github.ep2p.encore.key.PubHashUserIdGenerator;
 
 import java.security.KeyPair;
 

@@ -1,9 +1,9 @@
-package lab.idioglossia.eleuth.encore.serialize;
+package com.github.ep2p.encore.serialize;
 
 import org.apache.commons.codec.binary.Base64;
 import org.junit.jupiter.api.Test;
-import lab.idioglossia.eleuth.encore.diffieHellman.DiffieHellman;
-import lab.idioglossia.eleuth.encore.helper.Serializer;
+import com.github.ep2p.encore.diffieHellman.DiffieHellman;
+import com.github.ep2p.encore.helper.Serializer;
 
 import java.io.IOException;
 

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>lab.idioglossia.eleuth.encore</groupId>
+    <groupId>com.github.ep2p.encore</groupId>
     <artifactId>java-security-core</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>Eleuth Core Java Security</name>
@@ -16,7 +16,7 @@
             </roles>
             <name>Sepehr Gh</name>
             <organization>idioglossia</organization>
-            <organizationUrl>https://github.com/idioglossia/</organizationUrl>
+            <organizationUrl>https://github.com/ep2p</organizationUrl>
             <url>https://github.com/sepehr-gh</url>
         </developer>
     </developers>

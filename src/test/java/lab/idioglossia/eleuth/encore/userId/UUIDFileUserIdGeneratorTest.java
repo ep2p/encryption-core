@@ -1,7 +1,7 @@
-package lab.idioglossia.eleuth.encore.userId;
+package com.github.ep2p.encore.userId;
 
 import org.junit.jupiter.api.Test;
-import lab.idioglossia.eleuth.encore.key.UUIDFileUserIdGenerator;
+import com.github.ep2p.encore.key.UUIDFileUserIdGenerator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

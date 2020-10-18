@@ -1,4 +1,4 @@
-package lab.idioglossia.eleuth.encore.key;
+package com.github.ep2p.encore.key;
 
 import org.junit.jupiter.api.Test;
 
