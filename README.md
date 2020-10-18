@@ -1,4 +1,4 @@
-[![](https://jitpack.io/v/idioglossia/eleuth-java-security-core.svg)](https://jitpack.io/#idioglossia/eleuth-java-security-core)
+[![](https://jitpack.io/v/ep2p/eleuth-java-security-core.svg)](https://jitpack.io/#ep2p/eleuth-java-security-core)
 
 # Eleuth Security Core in Java
 
@@ -11,8 +11,8 @@ Diffie-Hellman is a way of generating a shared secret between two people in such
 Eleuth uses Diffie-Hellman to perform an end-to-end key exchange. This (temporary) secret key is used to encrypt p2p communications with an AES-256 cipher. 
 
 - *Tell me more! What it really is?* [read](https://security.stackexchange.com/questions/45963/diffie-hellman-key-exchange-in-plain-english)
-- *How?* [look](https://github.com/idioglossia/eleuth-java-security-core/tree/master/src/main/java/lab/idioglossia/eleuth/encore/diffieHellman)
-- *Show me a simple test?* [look](https://github.com/idioglossia/eleuth-java-security-core/blob/master/src/test/java/lab/idioglossia/eleuth/encore/diffieHellman/EncryptedSessionTest.java)
+- *How?* [look](https://github.com/ep2p/eleuth-java-security-core/tree/master/src/main/java/com/github/ep2p/encore/diffieHellman)
+- *Show me a simple test?* [look](https://github.com/ep2p/eleuth-java-security-core/blob/master/src/test/java/com/github/ep2p/encore/diffieHellman/EncryptedSessionTest.java)
 
 ### Encrypted Sessions
 
