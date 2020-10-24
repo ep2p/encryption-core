@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.ep2p.encore</groupId>
-    <artifactId>java-security-core</artifactId>
+    <groupId>com.github.ep2p</groupId>
+    <artifactId>java-encryption-core</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>Eleuth Core Java Security</name>
+    <name>Eleuth Encryption Code Java</name>
     <description>Core java classes and utils for Eluth encryption, key exchange and etc </description>
     <developers>
         <developer>
