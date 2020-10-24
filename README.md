@@ -1,4 +1,4 @@
-[![](https://jitpack.io/v/ep2p/eleuth-java-security-core.svg)](https://jitpack.io/#ep2p/eleuth-java-security-core)
+[![](https://jitpack.io/v/ep2p/java-encryption-core.svg)](https://jitpack.io/#ep2p/java-encryption-core)
 
 # Eleuth Security Core in Java
 
