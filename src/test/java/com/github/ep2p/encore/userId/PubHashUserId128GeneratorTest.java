@@ -13,6 +13,7 @@ import java.security.KeyPair;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+//This is just an example
 class PubHashUserId128GeneratorTest {
 
     //TODO: Should write to file and test quality of file data and generated data

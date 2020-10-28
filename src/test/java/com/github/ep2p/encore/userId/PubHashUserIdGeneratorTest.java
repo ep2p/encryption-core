@@ -8,6 +8,7 @@ import java.security.KeyPair;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+//This is just an example
 class PubHashUserIdGeneratorTest {
 
     //TODO: Should write to file and test equality after writing
