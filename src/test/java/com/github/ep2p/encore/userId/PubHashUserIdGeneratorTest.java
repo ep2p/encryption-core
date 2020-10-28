@@ -18,8 +18,8 @@ class PubHashUserIdGeneratorTest {
 
 
         PubHashUserIdGenerator pubHashUserIdGenerator = new PubHashUserIdGenerator();
-        String generate1 = pubHashUserIdGenerator.generate(keyPair.getPublic());
-        String generate2 = pubHashUserIdGenerator.generate(keyPair.getPublic());
+        String generate1 = pubHashUserIdGenerator.generate(keyPair.getPublic()).toString();
+        String generate2 = pubHashUserIdGenerator.generate(keyPair.getPublic()).toString();
         System.out.println(generate1);
 
         assertEquals(generate1, generate2);
