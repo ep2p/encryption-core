@@ -8,7 +8,7 @@ public class ChallengedKeyGenerator implements Generator<KeyPair> {
     private final int zeros;
     private final Generator<KeyPair> keyPairGenerator;
     private final String challenge;
-
+    private volatile boolean interrupt = false;
 
     public ChallengedKeyGenerator(int zeros, Generator<KeyPair> keyPairGenerator) {
         this.zeros = zeros;
@@ -24,15 +24,23 @@ public class ChallengedKeyGenerator implements Generator<KeyPair> {
     public synchronized KeyPair generate() {
         KeyPair keyPair = null;
         boolean con = true;
-        while (con){
+        while (con && !interrupt){
             keyPair = keyPairGenerator.generate();
             PubHashUserId128Generator pubHashUserId128Generator = new PubHashUserId128Generator();
             String string = pubHashUserId128Generator.generate(keyPair.getPublic()).toString();
             String substring = string.substring(string.length() - zeros, string.length());
-            System.out.println(substring);
             con = !substring.equals(challenge);
         }
+        System.out.println("Finished or interrupted");
 
         return keyPair;
+    }
+
+    public void interrupt(){
+        this.interrupt = true;
+    }
+
+    public boolean isInterrupt() {
+        return interrupt;
     }
 }
