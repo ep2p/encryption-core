@@ -40,7 +40,7 @@ public class SignatureTest {
 
     public SignatureTest() throws IOException, InvalidKeyException {
         new File(keyAddress).delete();
-        keyStoreGenerator = new KeyStoreGenerator(cnGenerator, keyAddress, keyPass, new KeyGenerator().generate());
+        keyStoreGenerator = new KeyStoreGenerator();
         DiffieHellman dh1 = new DiffieHellman();
         DiffieHellman dh2 = new DiffieHellman();
         this.encryptedSession1 = new EncryptedSession(dh1, dh2.getPublicKey());
@@ -49,7 +49,7 @@ public class SignatureTest {
 
     @Test
     public void testSignature() throws UnrecoverableKeyException, NoSuchAlgorithmException, KeyStoreException, InvalidKeyException {
-        KeyStore keyStore = keyStoreGenerator.generate();
+        KeyStore keyStore = keyStoreGenerator.generate(new KeyStoreGenerator.KeyStoreGeneratorInput(cnGenerator, keyAddress, keyPass, new KeyGenerator().generate()));
         PrivateKeyProvider privateKeyProvider = new PrivateKeyProvider(keyStore, keyPass);
         PrivateKey privateKey = privateKeyProvider.getPrivateKey();
         Certificate certificate = new KeyStoreWrapper(keyStore, keyAddress, keyPass).getCertificate("main");

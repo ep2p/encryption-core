@@ -24,12 +24,12 @@ public class KeyStoreGeneratorTest {
 
     public KeyStoreGeneratorTest() throws IOException {
         new File(keyAddress).delete();
-        keyStoreGenerator = new KeyStoreGenerator(cnGenerator, keyAddress, keyPass, new KeyGenerator().generate());
+        keyStoreGenerator = new KeyStoreGenerator();
     }
 
     @Test
     public void generate() throws KeyStoreException {
-        KeyStore keyStore = keyStoreGenerator.generate();
+        KeyStore keyStore = keyStoreGenerator.generate(new KeyStoreGenerator.KeyStoreGeneratorInput(cnGenerator, keyAddress, keyPass, new KeyGenerator().generate()));
         assertNotNull(keyStore);
 
         Certificate certificate = keyStore.getCertificate("main");

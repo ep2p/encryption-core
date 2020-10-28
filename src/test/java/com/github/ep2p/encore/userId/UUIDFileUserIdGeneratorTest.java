@@ -10,12 +10,12 @@ public class UUIDFileUserIdGeneratorTest {
 
     @Test
     public void generate(){
-        UUIDFileUserIdGenerator uuidFileUserIdGenerator1 = new UUIDFileUserIdGenerator(path);
-        UUIDFileUserIdGenerator uuidFileUserIdGenerator2 = new UUIDFileUserIdGenerator(path);
-        System.out.println(uuidFileUserIdGenerator1.generate());
-        System.out.println(uuidFileUserIdGenerator2.generate());
-        assertEquals(uuidFileUserIdGenerator1.generate(), uuidFileUserIdGenerator1.generate());
-        assertEquals(uuidFileUserIdGenerator1.generate(), uuidFileUserIdGenerator2.generate());
+        UUIDFileUserIdGenerator uuidFileUserIdGenerator1 = new UUIDFileUserIdGenerator();
+        UUIDFileUserIdGenerator uuidFileUserIdGenerator2 = new UUIDFileUserIdGenerator();
+        System.out.println(uuidFileUserIdGenerator1.generate(path));
+        System.out.println(uuidFileUserIdGenerator2.generate(path));
+        assertEquals(uuidFileUserIdGenerator1.generate(path), uuidFileUserIdGenerator1.generate(path));
+        assertEquals(uuidFileUserIdGenerator1.generate(path), uuidFileUserIdGenerator2.generate(path));
     }
 
 }

@@ -15,15 +15,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PubHashUserId128GeneratorTest {
 
+    //TODO: Should write to file and test quality of file data and generated data
+
     @Test
     void generate() {
         KeyGenerator keyGenerator = new KeyGenerator();
         KeyPair keyPair = keyGenerator.generate();
 
 
-        UserIdGenerator<BigInteger> pubHashUserIdGenerator = new PubHashUserId128Generator("user.pub.id",keyPair.getPublic());
-        BigInteger generate1 = pubHashUserIdGenerator.generate();
-        BigInteger generate2 = pubHashUserIdGenerator.generate();
+        UserIdGenerator<BigInteger> pubHashUserIdGenerator = new PubHashUserId128Generator();
+        BigInteger generate1 = pubHashUserIdGenerator.generate(keyPair.getPublic());
+        BigInteger generate2 = pubHashUserIdGenerator.generate(keyPair.getPublic());
         System.out.println(generate1);
         String g1base64 = new String(new Base64().encode(generate1.toByteArray()), StandardCharsets.UTF_8);
         String g2base64 = new String(new Base64().encode(generate2.toByteArray()), StandardCharsets.UTF_8);

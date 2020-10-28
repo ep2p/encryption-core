@@ -1,6 +1,9 @@
 package com.github.ep2p.encore.key;
 
-import com.github.ep2p.encore.Generator;
+import com.github.ep2p.encore.IOGenerator;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.SneakyThrows;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,37 +17,51 @@ import java.security.cert.X509Certificate;
 import static com.github.ep2p.encore.helper.CertificateHelper.generateCertificate;
 import static com.github.ep2p.encore.helper.CertificateHelper.getValByAttributeTypeFromIssuerDN;
 
-public class KeyStoreGenerator implements Generator<KeyStore> {
-    private final CNGenerator cnGenerator;
-    private final String password;
-    private final File file;
-    private final KeyPair keyPair;
-    private boolean fileExists = false;
+public class KeyStoreGenerator implements IOGenerator<KeyStoreGenerator.KeyStoreGeneratorInput, KeyStore> {
 
-    /* Accepts null keypair when keystore file already exists */
-    public KeyStoreGenerator(CNGenerator cnGenerator, String address, String password, KeyPair keyPair) throws IOException {
-        this.cnGenerator = cnGenerator;
-        this.password = password;
-        this.file = new File(address);
-        this.keyPair = keyPair;
+    @Getter
+    @Setter
+    public final static class KeyStoreGeneratorInput {
+        private CNGenerator cnGenerator;
+        private String address;
+        private String password;
+        private KeyPair keyPair;
+
+        public KeyStoreGeneratorInput(CNGenerator cnGenerator, String address, String password) {
+            this.cnGenerator = cnGenerator;
+            this.address = address;
+            this.password = password;
+        }
+
+        public KeyStoreGeneratorInput(CNGenerator cnGenerator, String address, String password, KeyPair keyPair) {
+            this.cnGenerator = cnGenerator;
+            this.address = address;
+            this.password = password;
+            this.keyPair = keyPair;
+        }
+    }
+
+    @SneakyThrows
+    @Override
+    public KeyStore generate(KeyStoreGeneratorInput input) {
+        File file = new File(input.getAddress());
+        boolean fileExists = false;
         if(!file.exists()) {
             file.createNewFile();
         }else{
             fileExists = true;
         }
-    }
 
-    public synchronized KeyStore generate(){
         if(fileExists){
-            KeyStore keyStore = getExistingKeyStore();
-            if(keyStore != null && isValidKeyStore(keyStore)){
+            KeyStore keyStore = getExistingKeyStore(file, input.getPassword());
+            if(keyStore != null && isValidKeyStore(keyStore, input.getCnGenerator())){
                 return keyStore;
             }
         }
-        return doGenerate();
+        return doGenerate(file, input.getCnGenerator(), input.getKeyPair(), input.getPassword());
     }
 
-    private boolean isValidKeyStore(KeyStore keyStore) {
+    private boolean isValidKeyStore(KeyStore keyStore, CNGenerator cnGenerator) {
         try {
             Certificate certificate = keyStore.getCertificate("main");
             X509Certificate x509Certificate = (X509Certificate) certificate;
@@ -59,7 +76,7 @@ public class KeyStoreGenerator implements Generator<KeyStore> {
         return false;
     }
 
-    private KeyStore getExistingKeyStore() {
+    private KeyStore getExistingKeyStore(File file, String password) {
         try {
             KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
             keyStore.load(new FileInputStream(file), password.toCharArray());
@@ -69,7 +86,7 @@ public class KeyStoreGenerator implements Generator<KeyStore> {
         }
     }
 
-    private KeyStore doGenerate(){
+    private KeyStore doGenerate(File file, CNGenerator cnGenerator, KeyPair keyPair, String password){
         FileOutputStream fileOutputStream = null;
         try {
             fileOutputStream = new FileOutputStream(file);
@@ -79,7 +96,6 @@ public class KeyStoreGenerator implements Generator<KeyStore> {
             keyStore.load(null, null);
             keyStore.setKeyEntry("main", keyPair.getPrivate(), password.toCharArray(), chain);
             keyStore.store(fileOutputStream, password.toCharArray());
-            this.fileExists  = true;
             return keyStore;
         } catch (GeneralSecurityException | IOException e) {
             e.printStackTrace();

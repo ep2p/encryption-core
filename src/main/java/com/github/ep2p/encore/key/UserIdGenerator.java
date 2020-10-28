@@ -1,6 +1,8 @@
 package com.github.ep2p.encore.key;
 
-import com.github.ep2p.encore.Generator;
+import com.github.ep2p.encore.IOGenerator;
 
-public interface UserIdGenerator<I> extends Generator<I> {
+import java.security.PublicKey;
+
+public interface UserIdGenerator<O> extends IOGenerator<PublicKey, O> {
 }

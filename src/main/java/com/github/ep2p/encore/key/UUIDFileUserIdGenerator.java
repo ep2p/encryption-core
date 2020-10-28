@@ -1,5 +1,7 @@
 package com.github.ep2p.encore.key;
 
+import com.github.ep2p.encore.IOGenerator;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,16 +11,9 @@ import java.nio.file.Paths;
 import java.util.UUID;
 import java.util.stream.Stream;
 
-public class UUIDFileUserIdGenerator implements UserIdGenerator {
-    private final String filePath;
-    private String uuid;
-
-    public UUIDFileUserIdGenerator(String filePath) {
-        this.filePath = filePath;
-        init();
-    }
-
-    private void init(){
+public class UUIDFileUserIdGenerator implements IOGenerator<String, String> {
+    @Override
+    public String generate(String filePath) {
         File file = new File(filePath);
         if(file.exists()){
             StringBuilder stringBuilder = new StringBuilder();
@@ -27,20 +22,15 @@ public class UUIDFileUserIdGenerator implements UserIdGenerator {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            this.uuid = stringBuilder.toString();
+            return stringBuilder.toString();
         }else{
-            this.uuid = UUID.randomUUID().toString();
+            String uuid = UUID.randomUUID().toString();
             try (PrintWriter out = new PrintWriter(filePath)) {
                 out.println(uuid);
             } catch (FileNotFoundException e) {
                 throw new RuntimeException(e);
             }
+            return uuid;
         }
-    }
-
-
-    @Override
-    public String generate() {
-        return this.uuid;
     }
 }

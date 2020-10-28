@@ -10,15 +10,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PubHashUserIdGeneratorTest {
 
+    //TODO: Should write to file and test equality after writing
     @Test
     void generate() {
         KeyGenerator keyGenerator = new KeyGenerator();
         KeyPair keyPair = keyGenerator.generate();
 
 
-        PubHashUserIdGenerator pubHashUserIdGenerator = new PubHashUserIdGenerator("user.pub.id",keyPair.getPublic());
-        String generate1 = pubHashUserIdGenerator.generate();
-        String generate2 = pubHashUserIdGenerator.generate();
+        PubHashUserIdGenerator pubHashUserIdGenerator = new PubHashUserIdGenerator();
+        String generate1 = pubHashUserIdGenerator.generate(keyPair.getPublic());
+        String generate2 = pubHashUserIdGenerator.generate(keyPair.getPublic());
         System.out.println(generate1);
 
         assertEquals(generate1, generate2);
