@@ -31,7 +31,6 @@ public class ChallengedKeyGenerator implements Generator<KeyPair> {
             String substring = string.substring(string.length() - zeros, string.length());
             con = !substring.equals(challenge);
         }
-        System.out.println("Finished or interrupted");
 
         return keyPair;
     }
