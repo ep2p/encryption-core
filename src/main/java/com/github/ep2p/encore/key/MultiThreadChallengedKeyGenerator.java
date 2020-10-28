@@ -1,6 +1,5 @@
 package com.github.ep2p.encore.key;
 
-import com.github.ep2p.encore.Generator;
 import lombok.SneakyThrows;
 
 import java.security.KeyPair;
@@ -9,17 +8,15 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class MultiThreadChallengedKeyGenerator implements Generator<KeyPair> {
-    private final int zeros;
-    private final Generator<KeyPair> keyPairGenerator;
+public class MultiThreadChallengedKeyGenerator extends KeyGeneratorDecorator {
     private final int threads;
     private CountDownLatch countDownLatch;
 
-    public MultiThreadChallengedKeyGenerator(int zeros, Generator<KeyPair> keyPairGenerator, int threads) {
-        this.zeros = zeros;
-        this.keyPairGenerator = keyPairGenerator;
+    public MultiThreadChallengedKeyGenerator(ChallengedKeyGeneratorDecorator keyPairGenerator, int threads) {
+        super(keyPairGenerator);
         this.threads = threads;
     }
+
 
     @SneakyThrows
     @Override
@@ -41,25 +38,23 @@ public class MultiThreadChallengedKeyGenerator implements Generator<KeyPair> {
     }
 
     private class Task implements Runnable {
-        private final ChallengedKeyGenerator challengedKeyGenerator;
         private final AtomicReference<KeyPair> atomicReference;
 
         private Task(AtomicReference<KeyPair> atomicReference) {
-            this.challengedKeyGenerator = new ChallengedKeyGenerator(zeros, keyPairGenerator);
             this.atomicReference = atomicReference;
         }
 
         @Override
         public void run() {
-            KeyPair keyPair = challengedKeyGenerator.generate();
-            if(!challengedKeyGenerator.isInterrupt()){
+            KeyPair keyPair = keyPairGenerator.generate();
+            if(!((ChallengedKeyGeneratorDecorator)keyPairGenerator).isInterrupt()){
                 atomicReference.set(keyPair);
                 countDownLatch.countDown();
             }
         }
 
         public void interrupt(){
-            challengedKeyGenerator.interrupt();
+            ((ChallengedKeyGeneratorDecorator)keyPairGenerator).interrupt();
         }
     }
 
