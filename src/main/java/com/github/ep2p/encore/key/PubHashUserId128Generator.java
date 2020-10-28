@@ -1,12 +1,10 @@
 package com.github.ep2p.encore.key;
 
-import org.apache.commons.codec.binary.Base64;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.charset.StandardCharsets;
+import java.math.BigInteger;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.MessageDigest;
@@ -14,13 +12,13 @@ import java.security.NoSuchAlgorithmException;
 import java.security.PublicKey;
 import java.util.stream.Stream;
 
-public class PubHashUserIdGenerator implements UserIdGenerator<String> {
+public class PubHashUserId128Generator implements UserIdGenerator<BigInteger> {
     private final PublicKey publicKey;
-    private String uuid;
+    private BigInteger uuid;
     private String filePath;
 
     /* Accepts null publicKey when keystore file already exists */
-    public PubHashUserIdGenerator(String filePath, PublicKey publicKey) {
+    public PubHashUserId128Generator(String filePath, PublicKey publicKey) {
         this.publicKey = publicKey;
         this.filePath = filePath;
         init();
@@ -35,7 +33,8 @@ public class PubHashUserIdGenerator implements UserIdGenerator<String> {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            this.uuid = stringBuilder.toString();
+
+            this.uuid = new BigInteger(stringBuilder.toString());
         }else{
             this.uuid = doGenerate();
             try (PrintWriter out = new PrintWriter(filePath)) {
@@ -46,19 +45,19 @@ public class PubHashUserIdGenerator implements UserIdGenerator<String> {
         }
     }
 
-    private String doGenerate() {
+    private BigInteger doGenerate() {
         MessageDigest md = null;
         try {
-            md = MessageDigest.getInstance("SHA-256");
+            md = MessageDigest.getInstance("SHA-1");
             byte[] hash = md.digest(publicKey.getEncoded());
-            return new String(new Base64().encode(hash), StandardCharsets.UTF_8);
+            return new BigInteger(hash);
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
     }
 
     @Override
-    public String generate() {
+    public BigInteger generate() {
         return uuid;
     }
 }
