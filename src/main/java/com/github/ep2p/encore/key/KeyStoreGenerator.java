@@ -54,7 +54,7 @@ public class KeyStoreGenerator implements IOGenerator<KeyStoreGenerator.KeyStore
 
         if(fileExists){
             KeyStore keyStore = getExistingKeyStore(file, input.getPassword());
-            if(keyStore != null && isValidKeyStore(keyStore, input.getCnGenerator())){
+            if(isValidKeyStore(keyStore, input.getCnGenerator())){
                 return keyStore;
             }
         }
