@@ -6,7 +6,7 @@
 
     <groupId>com.github.ep2p</groupId>
     <artifactId>java-encryption-core</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
     <name>Eleuth Encryption Code Java</name>
     <description>Core java classes and utils for Eluth encryption, key exchange and etc </description>
     <developers>
