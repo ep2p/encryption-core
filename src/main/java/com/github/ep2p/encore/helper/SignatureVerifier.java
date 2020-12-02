@@ -23,11 +23,9 @@ public class SignatureVerifier {
             cipher = Cipher.getInstance("RSA");
             cipher.init(Cipher.DECRYPT_MODE, publicKey);
             byte[] decryptedMessageHash = cipher.doFinal(signature);
-            System.out.println(new String(decryptedMessageHash, StandardCharsets.UTF_8));
 
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             byte[] newMessageHash = md.digest(message);
-            System.out.println(new String(newMessageHash, StandardCharsets.UTF_8));
 
             return Arrays.equals(decryptedMessageHash, newMessageHash);
         } catch (NoSuchAlgorithmException | NoSuchPaddingException | BadPaddingException | IllegalBlockSizeException ignored) {}
