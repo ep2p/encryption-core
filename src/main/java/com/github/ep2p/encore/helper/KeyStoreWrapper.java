@@ -42,15 +42,22 @@ public class KeyStoreWrapper {
         store();
     }
 
-    public void addCertificate(String base64, String userId) throws IOException, CertificateException, KeyStoreException, NoSuchAlgorithmException {
-        byte[] decodedValue = new Base64().decode(base64);
-        addCertificate(decodedValue, userId);
+    public Certificate getEncodedCertificate(String base64) throws CertificateException {
+        byte[] bytes = new Base64().decode(base64);
+        return getCertificate(bytes);
     }
-    public void addCertificate(byte[] bytes, String userId) throws CertificateException, KeyStoreException, IOException, NoSuchAlgorithmException {
+
+    public Certificate getCertificate(byte[] bytes) throws CertificateException {
         CertificateFactory certFactory = CertificateFactory.getInstance("X.509");
         InputStream in = new ByteArrayInputStream(bytes);
-        X509Certificate cert = (X509Certificate)certFactory.generateCertificate(in);
-        addCertificate(cert, userId);
+        return certFactory.generateCertificate(in);
+    }
+
+    public void addCertificate(String base64, String userId) throws IOException, CertificateException, KeyStoreException, NoSuchAlgorithmException {
+        addCertificate(getEncodedCertificate(base64), userId);
+    }
+    public void addCertificate(byte[] bytes, String userId) throws CertificateException, KeyStoreException, IOException, NoSuchAlgorithmException {
+        addCertificate(getCertificate(bytes), userId);
     }
 
     public Certificate getCertificate(String alias) throws KeyStoreException {
