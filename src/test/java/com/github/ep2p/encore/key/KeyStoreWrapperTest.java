@@ -24,7 +24,7 @@ public class KeyStoreWrapperTest {
     private final String keyAddress = "/tmp/key2.jks";
     private final String keyPass = "123456";
     private final String userId = UUID.randomUUID().toString();
-    private final CNGenerator cnGenerator = new NeoRoutesCNGenerator(userId);
+    private final CNGenerator cnGenerator = new UserIdCNGenerator(userId);
 
 
     public KeyStoreWrapperTest() throws IOException {
@@ -40,7 +40,7 @@ public class KeyStoreWrapperTest {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
         keyPairGenerator.initialize(2048);
         KeyPair keyPair = keyPairGenerator.generateKeyPair();
-        X509Certificate certificate = CertificateHelper.generateCertificate(new NeoRoutesCNGenerator(uuid).generate(), keyPair, 365, "SHA256withRSA");
+        X509Certificate certificate = CertificateHelper.generateCertificate(new UserIdCNGenerator(uuid).generate(), keyPair, 365, "SHA256withRSA");
 
         KeyStoreWrapper keyStoreWrapper = new KeyStoreWrapper(keyStore, keyAddress, keyPass);
         keyStoreWrapper.addCertificate(certificate, uuid);
@@ -59,7 +59,7 @@ public class KeyStoreWrapperTest {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
         keyPairGenerator.initialize(2048);
         KeyPair keyPair = keyPairGenerator.generateKeyPair();
-        X509Certificate certificate = CertificateHelper.generateCertificate(new NeoRoutesCNGenerator(uuid).generate(), keyPair, 365, "SHA256withRSA");
+        X509Certificate certificate = CertificateHelper.generateCertificate(new UserIdCNGenerator(uuid).generate(), keyPair, 365, "SHA256withRSA");
 
         KeyStoreWrapper keyStoreWrapper = new KeyStoreWrapper(keyStore, keyAddress, keyPass);
         keyStoreWrapper.addCertificate(certificate.getEncoded(), uuid);
@@ -77,7 +77,7 @@ public class KeyStoreWrapperTest {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
         keyPairGenerator.initialize(2048);
         KeyPair keyPair = keyPairGenerator.generateKeyPair();
-        X509Certificate certificate = CertificateHelper.generateCertificate(new NeoRoutesCNGenerator(uuid).generate(), keyPair, 365, "SHA256withRSA");
+        X509Certificate certificate = CertificateHelper.generateCertificate(new UserIdCNGenerator(uuid).generate(), keyPair, 365, "SHA256withRSA");
 
         KeyStoreWrapper keyStoreWrapper = new KeyStoreWrapper(keyStore, keyAddress, keyPass);
         keyStoreWrapper.addCertificate(new String(new Base64().encode(certificate.getEncoded()), "UTF-8"), uuid);
@@ -95,7 +95,7 @@ public class KeyStoreWrapperTest {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
         keyPairGenerator.initialize(2048);
         KeyPair keyPair = keyPairGenerator.generateKeyPair();
-        X509Certificate certificate = CertificateHelper.generateCertificate(new NeoRoutesCNGenerator(uuid).generate(), keyPair, 365, "SHA256withRSA");
+        X509Certificate certificate = CertificateHelper.generateCertificate(new UserIdCNGenerator(uuid).generate(), keyPair, 365, "SHA256withRSA");
 
         KeyStoreWrapper keyStoreWrapper = new KeyStoreWrapper(keyStore, keyAddress, keyPass);
         keyStoreWrapper.addCertificate(certificate, uuid);
@@ -114,7 +114,7 @@ public class KeyStoreWrapperTest {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
         keyPairGenerator.initialize(2048);
         KeyPair keyPair = keyPairGenerator.generateKeyPair();
-        X509Certificate certificate = CertificateHelper.generateCertificate(new NeoRoutesCNGenerator(uuid).generate(), keyPair, 365, "SHA256withRSA");
+        X509Certificate certificate = CertificateHelper.generateCertificate(new UserIdCNGenerator(uuid).generate(), keyPair, 365, "SHA256withRSA");
 
         KeyStoreWrapper keyStoreWrapper = new KeyStoreWrapper(keyStore, keyAddress, keyPass);
         keyStoreWrapper.addCertificate(certificate, uuid);
@@ -130,7 +130,7 @@ public class KeyStoreWrapperTest {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
         keyPairGenerator.initialize(2048);
         KeyPair keyPair = keyPairGenerator.generateKeyPair();
-        X509Certificate certificate = CertificateHelper.generateCertificate(new NeoRoutesCNGenerator(uuid).generate(), keyPair, 365, "SHA256withRSA");
+        X509Certificate certificate = CertificateHelper.generateCertificate(new UserIdCNGenerator(uuid).generate(), keyPair, 365, "SHA256withRSA");
         KeyStoreWrapper keyStoreWrapper = new KeyStoreWrapper(keyStore, keyAddress, keyPass);
         keyStoreWrapper.addCertificate(certificate, uuid);
 

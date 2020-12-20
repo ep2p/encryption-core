@@ -10,7 +10,7 @@ import com.github.ep2p.encore.helper.SignatureVerifier;
 import com.github.ep2p.encore.key.CNGenerator;
 import com.github.ep2p.encore.key.KeyGenerator;
 import com.github.ep2p.encore.key.KeyStoreGenerator;
-import com.github.ep2p.encore.key.NeoRoutesCNGenerator;
+import com.github.ep2p.encore.key.UserIdCNGenerator;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,7 +32,7 @@ public class SignatureTest {
     private final String keyAddress = "/tmp/key.jks";
     private final String keyPass = "123456";
     private final String userId = UUID.randomUUID().toString();
-    private final CNGenerator cnGenerator = new NeoRoutesCNGenerator(userId);
+    private final CNGenerator cnGenerator = new UserIdCNGenerator(userId);
 
     private final EncryptedSession encryptedSession1;
     private final EncryptedSession encryptedSession2;

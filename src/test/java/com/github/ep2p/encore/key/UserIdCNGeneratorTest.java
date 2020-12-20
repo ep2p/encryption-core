@@ -6,11 +6,11 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class NeoRoutesCNGeneratorTest {
+public class UserIdCNGeneratorTest {
 
     @Test
     public void getCN() {
         String s = UUID.randomUUID().toString();
-        assertEquals(new NeoRoutesCNGenerator(s).generate(), "cn="+s+".neoroutes");
+        assertEquals(new UserIdCNGenerator(s).generate(), "cn="+s+".neoroutes");
     }
 }

@@ -3,7 +3,7 @@ package com.github.ep2p.encore.key;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public class NeoRoutesCNGenerator implements CNGenerator {
+public class UserIdCNGenerator implements CNGenerator {
     private final String userId;
 
     @Override

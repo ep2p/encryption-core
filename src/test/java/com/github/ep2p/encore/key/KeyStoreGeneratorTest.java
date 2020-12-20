@@ -19,7 +19,7 @@ public class KeyStoreGeneratorTest {
     private final String keyAddress = "/tmp/key.jks";
     private final String keyPass = "123456";
     private final String userId = UUID.randomUUID().toString();
-    private final CNGenerator cnGenerator = new NeoRoutesCNGenerator(userId);
+    private final CNGenerator cnGenerator = new UserIdCNGenerator(userId);
 
 
     public KeyStoreGeneratorTest() throws IOException {
