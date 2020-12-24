@@ -1,8 +1,8 @@
 package com.github.ep2p.encore.userId;
 
-import org.junit.jupiter.api.Test;
 import com.github.ep2p.encore.key.KeyGenerator;
 import com.github.ep2p.encore.key.PubHashUserIdGenerator;
+import org.junit.jupiter.api.Test;
 
 import java.security.KeyPair;
 

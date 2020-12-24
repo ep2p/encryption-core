@@ -1,7 +1,7 @@
 package com.github.ep2p.encore.serialize;
 
-import org.junit.jupiter.api.Test;
 import com.github.ep2p.encore.helper.Serializer;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 

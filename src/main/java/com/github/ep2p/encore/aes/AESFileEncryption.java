@@ -1,7 +1,7 @@
 package com.github.ep2p.encore.aes;
 
-import lombok.AllArgsConstructor;
 import com.github.ep2p.encore.helper.AESSecretKeyGenerator;
+import lombok.AllArgsConstructor;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;

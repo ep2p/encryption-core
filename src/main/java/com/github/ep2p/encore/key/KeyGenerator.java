@@ -1,7 +1,7 @@
 package com.github.ep2p.encore.key;
 
-import lombok.SneakyThrows;
 import com.github.ep2p.encore.Generator;
+import lombok.SneakyThrows;
 
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;

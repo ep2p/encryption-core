@@ -1,7 +1,7 @@
 package com.github.ep2p.encore.userId;
 
-import org.junit.jupiter.api.Test;
 import com.github.ep2p.encore.key.UUIDFileUserIdGenerator;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

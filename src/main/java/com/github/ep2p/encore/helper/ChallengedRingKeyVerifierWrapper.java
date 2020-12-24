@@ -3,7 +3,6 @@ package com.github.ep2p.encore.helper;
 import com.github.ep2p.encore.key.UserIdGenerator;
 
 import java.math.BigInteger;
-import java.security.InvalidKeyException;
 import java.security.PublicKey;
 
 public class ChallengedRingKeyVerifierWrapper implements RingKeyVerifier {

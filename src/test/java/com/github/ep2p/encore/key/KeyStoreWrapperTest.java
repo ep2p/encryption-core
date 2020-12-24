@@ -1,9 +1,9 @@
 package com.github.ep2p.encore.key;
 
-import org.apache.commons.codec.binary.Base64;
-import org.junit.jupiter.api.Test;
 import com.github.ep2p.encore.helper.CertificateHelper;
 import com.github.ep2p.encore.helper.KeyStoreWrapper;
+import org.apache.commons.codec.binary.Base64;
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;

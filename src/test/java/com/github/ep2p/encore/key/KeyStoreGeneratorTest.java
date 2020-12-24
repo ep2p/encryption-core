@@ -10,9 +10,9 @@ import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 import java.util.UUID;
 
+import static com.github.ep2p.encore.helper.CertificateHelper.getValByAttributeTypeFromIssuerDN;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static com.github.ep2p.encore.helper.CertificateHelper.getValByAttributeTypeFromIssuerDN;
 
 public class KeyStoreGeneratorTest {
     private final KeyStoreGenerator keyStoreGenerator;

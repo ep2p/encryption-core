@@ -1,6 +1,5 @@
 package com.github.ep2p.encore.signature;
 
-import org.junit.jupiter.api.Test;
 import com.github.ep2p.encore.diffieHellman.DiffieHellman;
 import com.github.ep2p.encore.diffieHellman.EncryptedSession;
 import com.github.ep2p.encore.helper.KeyStoreWrapper;
@@ -11,6 +10,7 @@ import com.github.ep2p.encore.key.CNGenerator;
 import com.github.ep2p.encore.key.KeyGenerator;
 import com.github.ep2p.encore.key.KeyStoreGenerator;
 import com.github.ep2p.encore.key.UserIdCNGenerator;
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;

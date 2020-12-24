@@ -2,7 +2,6 @@ package com.github.ep2p.encore.userId;
 
 import com.github.ep2p.encore.key.KeyGenerator;
 import com.github.ep2p.encore.key.PubHashUserId128Generator;
-import com.github.ep2p.encore.key.PubHashUserIdGenerator;
 import com.github.ep2p.encore.key.UserIdGenerator;
 import org.apache.commons.codec.binary.Base64;
 import org.junit.jupiter.api.Test;

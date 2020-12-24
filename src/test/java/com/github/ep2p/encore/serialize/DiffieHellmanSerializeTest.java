@@ -1,9 +1,9 @@
 package com.github.ep2p.encore.serialize;
 
-import org.apache.commons.codec.binary.Base64;
-import org.junit.jupiter.api.Test;
 import com.github.ep2p.encore.diffieHellman.DiffieHellman;
 import com.github.ep2p.encore.helper.Serializer;
+import org.apache.commons.codec.binary.Base64;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 

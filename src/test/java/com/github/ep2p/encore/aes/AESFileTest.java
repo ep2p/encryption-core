@@ -1,7 +1,7 @@
 package com.github.ep2p.encore.aes;
 
-import org.junit.jupiter.api.Test;
 import com.github.ep2p.encore.helper.AESSecretKeyGenerator;
+import org.junit.jupiter.api.Test;
 
 import java.io.*;
 
